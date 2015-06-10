@@ -173,7 +173,11 @@ snippet defs
 		${0}
 	end
 # def initialize
-snippet definit
+snippet defi
+	def initialize
+		${0}
+	end
+snippet defi()
 	def initialize(${1:args})
 		${0}
 	end
@@ -645,7 +649,14 @@ snippet mthrow
 snippet desc
 	require "spec_helper"
 
-	describe `ALERSpecDescribe()`${1} do
+	RSpec.describe `ALERSpecDescribe()`${1} do
+	end
+snippet feat
+	require "rails_helper"
+
+	RSpec.feature "`ALERSpecFeature()`", type: :feature do
+	  scenario "${1}" do
+	  end
 	end
 snippet descm
 	describe '${1:#method}' do
